@@ -1,0 +1,62 @@
+{
+    "url": {
+        "base_url": "http://verymacedonia.gr"
+    },
+    "group_of_urls":["/places-to-visit/?lang=el"],
+    "source_name": "verymacedonia",
+    "table_selector":"#dv-top-attr-container div.dv-carousel div.owl-item",
+	"table_selector":".portfolio_wrapper .portfolio-item",
+    "company_info": [
+        {
+            "label": "Αξιοθέατο",
+            "value": {
+                "selector": "h5.entry-title a",
+                "type": "text"
+            }
+        }
+    ],
+    "metrics": [
+        {
+            "label": "crawl_to",
+            "value": {
+                "selector": "h5.entry-title > a",
+                "type": "link"
+            }
+        }        
+    ],
+    "crawl": {
+        "metrics": [{
+            "label": "Πληροφορίες",
+            "value": {
+                "selector":".column_attr",
+                "type":"text"
+            }
+        }
+		,
+		{
+            "label": "Κατηγορία",
+            "value": {
+                "selector":"#Subheader .item-cat a",
+                "type":"text"
+                }
+        }
+		,
+		{
+            "label": "lat-long",
+            "value": {
+                "selector":"div.column_map script",
+                "type":"html",
+                 "replace":{
+                    "regex":[".*google.maps.LatLng", ";var draggable.*", ".*\n.*", "\r"],
+                    "with":["","","",""]
+                }
+                }
+        }
+		]
+    },
+    "store": {
+        "format": "json",
+        "hd_path":"C:/Users/akokkalas/Desktop/mak_results_group_url.json"
+    },
+    "dynamic_page": true
+}

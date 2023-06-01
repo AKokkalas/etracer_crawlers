@@ -1,0 +1,65 @@
+{
+  "url": {
+    "base_url": "https://epirusforallseasons.gr"
+  },
+  "group_of_urls":["/aksiotheata/fysi/", "/aksiotheata/politismos/","/aksiotheata/peripetia/","/aksiotheata/ilios-thalassa/","/aksiotheata/thriskia/"],
+  "source_name": "epirus",
+  "table_selector": "#attraction-type-wrapper div.single-attarction-wrapper  div  div  div.route-block-wrapper div.search-cards",
+  "entity_name": "sights",
+  "entity_info": [{
+
+      "label": "sight_title",
+      "value": {
+        "selector": "div > a > h3",
+        "type": "text"
+      }
+    },
+
+    {
+      "label": "img",
+      "value": {
+        "selector": "div > a > figure > img",
+        "type": "image"
+      }
+    }
+
+  ],
+  "metrics": [
+
+    {
+      "label": "crawl_to",
+      "value": {
+        "selector": "div > a",
+        "type": "link"
+      }
+    }
+  ],
+  "crawl": {
+    "metrics": [
+
+      {
+        "label": "full_title",
+        "value": {
+          "selector": "div > div > div > div.area-banner > div >h1",
+          "type": "text"
+        }
+      },
+      {
+        "label": "full_content",
+        "value": {
+          "selector": "div > div > div > div.single-attarction-wrapper.area-article-wrapper > div > div",
+          "type": "text"
+        }
+      }
+
+
+
+    ]
+  },
+
+  "store": {
+    "format": "json",
+    "hd_path": "/home/tassoskarag/projects/crawler_inxilatis/results/epirus_result.json"
+  },
+  "dynamic_page": true
+}

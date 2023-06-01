@@ -1,0 +1,72 @@
+{
+    "url": {
+        "base_url": "http://www.religiousgreece.gr"
+    },
+    "group_of_urls":["/web/guest/west-central-macedonia", "/web/guest/east-macedonia-thrace"],
+    "source_name": "religiousgreece",
+    "table_selector":"#dv-top-attr-container div.dv-carousel div.owl-item",
+    "company_info": [
+        {
+            "label": "name",
+            "value": {
+                "selector": "span.dv-title",
+                "type": "text"
+            }
+        }
+    ],
+    "metrics": [
+        {
+            "label": "crawl_to",
+            "value": {
+                "selector": "div.dv-content > a:nth-child(1)",
+                "type": "link"
+            }
+        }        
+    ],
+    "crawl": {
+        "metrics": [{
+            "label": "full_descr",
+            "value": {
+                "selector":".dv-content-area",
+                "type":"text"
+            }
+        },
+        {
+            "label": "lat",
+            "value": {
+                "selector":"a.dv-widget-link",
+                "type":"href",
+                "replace":{
+                    "regex":[".*@", ",[^,]*z",",.*"],
+                    "with":["","",""]
+                }
+                }
+        }
+        ,
+        {
+            "label": "lng",
+            "value": {
+                "selector":"a.dv-widget-link",
+                "type":"href",
+                "replace":{
+                    "regex":[".*@", ",[^,]*z",".*,"],
+                    "with":["","",""]
+                }
+                }
+        }
+		,
+		{
+            "label": "Info",
+            "value": {
+                "selector":".dv-widget-content:eq(1) li",
+                "type":"text"
+                }
+        }
+		]
+    },
+    "store": {
+        "format": "json",
+        "hd_path":"D:/Documents/CERTH/Crawler easie/Religious Greece/results_group_url_religious.json"
+    },
+    "dynamic_page": true
+}
